@@ -20,7 +20,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -93,6 +97,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng p2 = new LatLng(18.567951, 73.910683);
         LatLng p3 = new LatLng(18.568856, 73.910814);
         LatLng p4 = new LatLng(18.569025, 73.911530);
+
+        List<LatLng> points = new ArrayList<>();
+        points.add(p1);
+        points.add(p2);
+        points.add(p3);
+        points.add(p4);
+
+        PolylineOptions polylineOptions = new PolylineOptions();
+        polylineOptions.addAll(points).color(Color.BLUE).width(20);
+
+        mMap.addPolyline(polylineOptions);
     }
 
     private void addCircle(LatLng latLng) {
