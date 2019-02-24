@@ -81,10 +81,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
                     addMarker(latLng);
                     addCircle(latLng);
+                    addPolyLine();
                 }
 
             }
         });
+    }
+
+    private void addPolyLine() {
+        LatLng p1 = new LatLng(18.566588, 73.911359);
+        LatLng p2 = new LatLng(18.567951, 73.910683);
+        LatLng p3 = new LatLng(18.568856, 73.910814);
+        LatLng p4 = new LatLng(18.569025, 73.911530);
     }
 
     private void addCircle(LatLng latLng) {
